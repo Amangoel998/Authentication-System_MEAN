@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServerService } from './services/server.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'auth-client';
+  title = 'Authentication Client App';
+  constructor(private server: ServerService){}
+  public logOff(){
+    this.server.logout()
+  }
+  get isLogged(){
+    return this.server.isLoggedIn
+  }
 }

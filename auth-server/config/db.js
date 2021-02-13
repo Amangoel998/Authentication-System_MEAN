@@ -86,6 +86,8 @@ const loginUser = async (candidate) => {
     const payload = {
         user: {
             id: user.id,
+            name:user.user_name,
+            email: user.user_email
         },
     };
     return payload;

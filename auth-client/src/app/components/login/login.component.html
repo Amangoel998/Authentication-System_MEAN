@@ -1,0 +1,23 @@
+<div class="card-container">
+<div class="card" style="width: auto;height:100%;padding:1em">
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <p>
+    <input type="text" matInput placeholder="Username" formControlName="email" />
+  </p>
+  <p>
+    <input type="password" matInput placeholder="Password" formControlName="password" />
+  </p>
+  <p *ngIf="err" style="color:red">
+    {{ err }}
+  </p>
+  <div>
+    <a (click)="gotoRegister()">
+      Register instead
+    </a>
+    <span style="margin-left: 135px;">
+      <button type="submit" color="primary">Login</button>
+    </span>
+  </div>
+</form>
+</div>
+</div>
